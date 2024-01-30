@@ -1863,6 +1863,9 @@ class Arrow:
     def _is_last_day_of_month(date: "Arrow") -> bool:
         """Returns a boolean indicating whether the datetime is the last day of the month."""
         return date.day == calendar.monthrange(date.year, date.month)[1]
+    
+    def days_until(self, future_date):
+        return (future_date - self).days
 
 
 Arrow.min = Arrow.fromdatetime(dt_datetime.min)
